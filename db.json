@@ -1,0 +1,18 @@
+
+{
+  "contacts": [{
+      "name": "Jhon Rembo",
+      "number": "000-00-00",
+      "id": 1
+    },
+    {
+      "name": "Chuck Norris",
+      "number": "123-32-16",
+      "id": 2
+    },
+     {
+      "name": "Harry Potter",
+      "number": "333-33-33",
+      "id": 2
+    }]
+}
