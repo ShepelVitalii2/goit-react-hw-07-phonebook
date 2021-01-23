@@ -1,18 +1,14 @@
-
 {
-  "contacts": [{
-      "name": "Jhon Rembo",
-      "number": "000-00-00",
+  "contacts": [
+    {
+      "name": "asdasd",
+      "number": "123-23-23",
       "id": 1
     },
     {
-      "name": "Chuck Norris",
-      "number": "123-32-16",
+      "name": "cxzcz",
+      "number": "321-32-32",
       "id": 2
-    },
-     {
-      "name": "Harry Potter",
-      "number": "333-33-33",
-      "id": 2
-    }]
+    }
+  ]
 }

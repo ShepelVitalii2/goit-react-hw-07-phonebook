@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addContacts } from '../../redux/contacts/contacts-action';
-import { getItems } from '../../redux/contacts/contacts-selector';
+import { contactsOperations, contactsSelectors } from '../../redux/contacts';
 import s from './Form.module.css';
+import Loader from '../Loader';
 
 function Form() {
   const dispatch = useDispatch();
-  const contacts = useSelector(getItems);
+  const contacts = useSelector(contactsSelectors.getItems);
+  const isLoading = useSelector(contactsSelectors.getLoading);
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
@@ -52,7 +53,7 @@ function Form() {
     } else if (checkValidNumber(number)) {
       alert(`Enter valid number please`);
     } else {
-      dispatch(addContacts(name, number));
+      dispatch(contactsOperations.addContact(name, number));
     }
     resetInput();
   };
@@ -81,9 +82,12 @@ function Form() {
           autoComplete="off"
         />
       </label>
-      <button className={s.button} type="submit">
-        Add contact
-      </button>
+      {!isLoading && (
+        <button className={s.button} type="submit">
+          Add contact
+        </button>
+      )}
+      {isLoading && <Loader />}
     </form>
   );
 }
